@@ -62,17 +62,15 @@ dependencies {
     implementation(libs.androidx.material3)
     // firebase
     // Import the Firebase BoM
-    implementation(platform("com.google.firebase:firebase-bom:34.5.0"))
-    // TODO: Add the dependencies for Firebase products you want to use
-    // When using the BoM, don't specify versions in Firebase dependencies
-    implementation("com.google.firebase:firebase-analytics")
-    // Add the dependencies for any other desired Firebase products
-    // https://firebase.google.com/docs/android/setup#available-libraries
-    implementation("com.google.firebase:firebase-auth-ktx")
+    // Firebase BoM (manages versions automatically)
+    implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
+
+    // Add Firebase libraries without versions
     implementation("com.google.firebase:firebase-firestore-ktx")
+    implementation("com.google.firebase:firebase-auth-ktx")
     implementation("com.google.firebase:firebase-storage-ktx")
 
-    testImplementation(libs.junit)
+    testImplementation(libs.junit) 
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
